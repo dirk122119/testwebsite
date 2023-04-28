@@ -6,6 +6,9 @@ const webTheme = createTheme({
       primary: {
         main: '#c9a063',
       },
+      secondary: {
+        main: '#6B4240',
+      },
     },
   });
 export default webTheme
