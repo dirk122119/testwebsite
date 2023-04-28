@@ -1,0 +1,12 @@
+.text{
+  float: left;
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  &:hover{
+    cursor: pointer;
+    color: #c9a063
+  }
+}
