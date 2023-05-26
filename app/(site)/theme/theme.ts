@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { createTheme, Theme, ThemeProvider } from '@mui/material/styles';
 
+const font = "'Noto Sans TC', sans-serif;"
+
 const webTheme = createTheme({
     palette: {
       primary: {
@@ -10,5 +12,12 @@ const webTheme = createTheme({
         main: '#6B4240',
       },
     },
+    typography:{
+      fontFamily:font,
+      button:{
+        textTransform: "none"
+      }
+    }
   });
+
 export default webTheme

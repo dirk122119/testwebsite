@@ -6,7 +6,7 @@ const project = {
         {
             name:"name",
             title:"名稱",
-            type:"string"
+            type:"string",
         },
         {
             name:"slug",
@@ -14,6 +14,15 @@ const project = {
             type:"slug",
             options:{source:"name"}
         },
+        {
+            title: 'Tags',
+            name: 'tags',
+            type: 'array',
+            of: [{type: 'string'}],
+            options: {
+              layout: 'tags'
+            }
+          },
         {
             name:"image",
             title:"Image",
