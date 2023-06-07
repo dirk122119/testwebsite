@@ -1,6 +1,6 @@
 "use client"
 import * as React from 'react';
-import { getPost, getPostTest } from "@/sanity/sanity-utils"
+import { getPost} from "@/sanity/sanity-utils"
 import { Padding } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -23,7 +23,7 @@ const myPortableTextComponents: PortableTextComponents = {
         link: ({ value, children }) => {
             const target = (value?.href || '').startsWith('http') ? '_blank' : undefined
             return (
-                <a href={value?.href} target={target} rel={target === '_blank' && 'noindex nofollow'}>
+                <a href={value?.href} target={target} rel={ "_blank" && 'noindex nofollow'}>
                     {children}
                 </a>
             )
@@ -88,7 +88,7 @@ export default async function Post({ params }: Props) {
                                 <Typography variant="h6" component="div" sx={{ color: "#000000", maxWidth: "100%" }}>{post.writer}教練</Typography>
 
                                 <Typography variant="body1" component="div" sx={{ color: "#000000" }}>
-                                    {post.tags.map((tag) => (
+                                    {post.tags.map((tag:any) => (
                                         <span style={{ marginRight: '10px' }}>#{tag}</span>
                                     ))}
                                 </Typography>

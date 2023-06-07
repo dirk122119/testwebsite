@@ -1,4 +1,4 @@
-import { typeCoaches, typePosts } from "@/types/Project";
+import { typeCoaches, typePosts,typeVideoDir } from "@/types/Project";
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config"
 
@@ -33,13 +33,15 @@ export async function getCoaches(filter: string = ""): Promise<typeCoaches[]> {
 export async function getPosts(filter: string = ""): Promise<typePosts[]> {
 
     return createClient(clientConfig).fetch(
-        groq`*[_type=="post" && name!="${filter}"]{
+        groq`*[_type=="post" && name!="${filter}"]{ ..., writer-> }{
             _id,
             _createdAt,
             name,
             "slug":slug.current,
             "image":image.asset->url,
             class,
+            "writer":writer.name,
+            tags
         }`
     )
 }
@@ -95,7 +97,7 @@ export async function getCoachPost(slug: string) {
     )
 }
 
-export async function getVideoDir() {
+export async function getVideoDir():Promise<typeVideoDir[]> {
     return createClient(clientConfig).fetch(
         groq`*[_type=="videoDir"]{
             _id,

@@ -2,7 +2,7 @@ import { PortableTextBlock } from "sanity";
 
 export type typeCoaches = {
   _id: string,
-  createdAt: Date,
+  _createdAt: string,
   name: string,
   slug: string,
   image: string,
@@ -13,9 +13,23 @@ export type typeCoaches = {
 
 export type typePosts = {
   _id: string,
-  createdAt: Date,
+  _createdAt: string,
   name: string,
   slug: string,
   image: string,
-  class:string
+  class:string,
+  writer:string,
+  tags:string[]
+}
+
+export type typeVideoDir={
+  _id: string,
+  _createdAt: string,
+  name: string,
+  slug: string,
+  image: string,
+  class:string,
+  content: PortableTextBlock[],
+  tags:string[],
+  video:string[]
 }
