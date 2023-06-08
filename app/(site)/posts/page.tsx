@@ -37,8 +37,9 @@ export default async function PostArchive(props: Props) {
             sx={{marginRight:"10px"}}
           />
           {
-            tagSet.map((tag) => (
+            tagSet.map((tag,index:number) => (
               <Chip
+              key={index}
                 label={tag}
                 component="a"
                 href={`/posts?search=${tag}`}

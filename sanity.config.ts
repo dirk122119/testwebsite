@@ -7,7 +7,7 @@ import schemas from "./sanity/schemas";
 
 
 const config = defineConfig({
-    projectId: '7svfhm2j',
+    projectId: process.env.NEXT_PUBLIC_ProjectId!,
     dataset: 'production',
     title: 'weightliftingcollege_sanity',
     apiVersion:"2023-03-04",

@@ -95,17 +95,17 @@ export default async function Coach({ params }: Props) {
 
                                 <Typography variant="h6" component="div" sx={{ color: "#000000", backgroundColor: "#DCDDDD", maxWidth: "70%" }}>專長</Typography>
                                 {
-                                    coach.skill.map((skill: string) => (<Typography variant="subtitle1" component="div" sx={{ color: "#000000", maxWidth: "70%" }}>{skill}</Typography>))
+                                    coach.skill.map((skill: string,index:number) => (<Typography key={index} variant="subtitle1" component="div" sx={{ color: "#000000", maxWidth: "70%" }}>{skill}</Typography>))
                                 }
                                 {coach.prizes && <Typography variant="h6" component="div" sx={{ color: "#000000", backgroundColor: "#DCDDDD", maxWidth: "70%" }}>獎項</Typography>}
-                                {coach.prizes && coach.prizes.map((prize: string) => (<Typography variant="subtitle1" component="div" sx={{ color: "#000000", maxWidth: "70%" }}>{prize}</Typography>))}
+                                {coach.prizes && coach.prizes.map((prize: string,index:number) => (<Typography key={index} variant="subtitle1" component="div" sx={{ color: "#000000", maxWidth: "70%" }}>{prize}</Typography>))}
                                 <Typography variant="h6" component="div" sx={{ color: "#000000", backgroundColor: "#DCDDDD", maxWidth: "70%" }}>教練經歷</Typography>
                                 {
-                                    coach.experience.map((experience: string) => (<Typography variant="subtitle1" component="div" sx={{ color: "#000000", maxWidth: "70%" }}>{experience}</Typography>))
+                                    coach.experience.map((experience: string,index:number) => (<Typography key={index} variant="subtitle1" component="div" sx={{ color: "#000000", maxWidth: "70%" }}>{experience}</Typography>))
                                 }
                                 <Typography variant="h6" component="div" sx={{ color: "#000000", backgroundColor: "#DCDDDD", maxWidth: "70%" }}>教練證照</Typography>
                                 {
-                                    coach.license.map((license: string) => (<Typography variant="subtitle1" component="div" sx={{ color: "#000000", maxWidth: "70%" }}>{license}</Typography>))
+                                    coach.license.map((license: string,index:number) => (<Typography key={index} variant="subtitle1" component="div" sx={{ color: "#000000", maxWidth: "70%" }}>{license}</Typography>))
                                 }
                             </Stack>
                         </Grid>
@@ -146,10 +146,10 @@ export default async function Coach({ params }: Props) {
                             <Box sx={{ flexGrow: 1 }}>
                                 <Grid container spacing={2}>
                                     {
-                                        coachPosts.map((coachPost) => (
+                                        coachPosts.map((coachPost:any) => (
                                             <>
                                                 <Grid item xs={4} sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                                                    <PostCard img={coachPost.image} name={coachPost.name} id={coachPost._id} class={coachPost.class} />
+                                                    <PostCard img={coachPost.image} name={coachPost.name} id={coachPost._id} class={coachPost.class} link="posts" tag="innerLink" />
                                                 </Grid>
                                             </>
                                         ))

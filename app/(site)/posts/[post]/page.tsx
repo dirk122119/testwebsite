@@ -88,8 +88,8 @@ export default async function Post({ params }: Props) {
                                 <Typography variant="h6" component="div" sx={{ color: "#000000", maxWidth: "100%" }}>{post.writer}教練</Typography>
 
                                 <Typography variant="body1" component="div" sx={{ color: "#000000" }}>
-                                    {post.tags.map((tag:any) => (
-                                        <span style={{ marginRight: '10px' }}>#{tag}</span>
+                                    {post.tags.map((tag:any,index:number) => (
+                                        <span key={index} style={{ marginRight: '10px' }}>#{tag}</span>
                                     ))}
                                 </Typography>
                             </div>
