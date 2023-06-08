@@ -1,15 +1,12 @@
 "use client"
-import { getProjects, getCoaches, getPosts, getVideoDir } from '@/sanity/sanity-utils'
-import { typeCoaches } from '@/types/Project';
+import {getCoaches, getPosts, getVideoDir } from '../../sanity/sanity-utils'
 import Image from 'next/image';
-import banner from "@/public/banner.jpg";
+import banner from "../../public/banner.jpg";
 import CoachCard from "./component/CoachIntroductionCard"
 import PostCard from './component/PostCard';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Link from 'next/link';
 import Typography from '@mui/material/Typography';
-import { Trykker } from 'next/font/google';
 export default async function Home() {
 
   const coaches = await getCoaches();
