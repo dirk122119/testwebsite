@@ -25,7 +25,7 @@ import webTheme from '@/app/(site)/theme/theme';
 
 
 
-const pages = [{name:'首頁',url:'/'},{name:'部落格文章',url:'posts'}, {name:'教練資料',url:'/'},{name:'影音內容',url:'/videoDirs'}];
+const pages = [{name:'首頁',url:'/'},{name:'部落格文章',url:'/posts'}, {name:'教練資料',url:'/'},{name:'影音內容',url:'/videoDirs'}];
 
 export default function Header() {
 
