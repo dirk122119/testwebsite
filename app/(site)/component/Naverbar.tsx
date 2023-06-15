@@ -25,7 +25,7 @@ import webTheme from '@/app/(site)/theme/theme';
 
 
 
-const pages = [{name:'首頁',url:'/'},{name:'部落格文章',url:'/posts'}, {name:'教練資料',url:'/'},{name:'影音內容',url:'/videoDirs'}];
+const pages = [{ name: '首頁', url: '/' }, { name: '部落格文章', url: '/posts' }, { name: '教練資料', url: '/' }, { name: '影音內容', url: '/videoDirs' }];
 
 export default function Header() {
 
@@ -54,7 +54,7 @@ export default function Header() {
                 <AppBar position="static" sx={{ backgroundColor: "black", flexDirection: "row", justifyContent: "center", width: "100%" }}>
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
-                            <Box sx={{ flexGrow: 1, display: {xs: 'flex',md: 'none' }, justifyContent: "center" }}>
+                            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: "center" }}>
                                 <IconButton
                                     size="large"
                                     aria-label="account of current user"
@@ -93,25 +93,31 @@ export default function Header() {
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "space-around", alignItems: "center", width: "80%" }}>
                                 {pages.map((page) => (
                                     <Link key={page.name} href={page.url}>
-                                    <Button
-                                        sx={{ my: 2, color: 'white', display: 'block', fontSize: "17px", "&:hover": { color: "#c9a063" } }}
-                                    >
-                                        
-                                        {page.name}
-                                        
-                                    </Button>
+                                        <Button
+                                            sx={{ my: 2, color: 'white', display: 'block', fontSize: "17px", "&:hover": { color: "#c9a063" } }}
+                                        >
+
+                                            {page.name}
+
+                                        </Button>
                                     </Link>
                                 ))}
                             </Box>
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "flex-end", alignItems: "center", width: "20%" }}>
                                 <IconButton aria-label="instagram">
-                                    <InstagramIcon sx={{ color: "white", fontSize: 40, "&:hover": { color: "#c9a063" } }} />
+                                    <Link href="https://www.instagram.com/the_rights_lifter/">
+                                        <InstagramIcon sx={{ color: "white", fontSize: 40, "&:hover": { color: "#c9a063" } }} />
+                                    </Link>
                                 </IconButton>
                                 <IconButton aria-label="facebook">
-                                    <FacebookIcon sx={{ color: "white", fontSize: 40, "&:hover": { color: "#c9a063" } }} />
+                                    <Link href="https://www.facebook.com/rightslifter/?locale=zh_TW">
+                                        <FacebookIcon sx={{ color: "white", fontSize: 40, "&:hover": { color: "#c9a063" } }} />
+                                    </Link>
                                 </IconButton>
                                 <IconButton aria-label="youtube">
-                                    <YouTubeIcon sx={{ color: "white", fontSize: 40, "&:hover": { color: "#c9a063" } }} />
+                                    <Link href="https://www.youtube.com/channel/UCrJl_NqIbT_hW4CcWm1T6ng">
+                                        <YouTubeIcon sx={{ color: "white", fontSize: 40, "&:hover": { color: "#c9a063" } }} />
+                                    </Link>
                                 </IconButton>
                             </Box>
                         </Toolbar>
@@ -121,5 +127,5 @@ export default function Header() {
 
 
         </ThemeProvider>
-        )
+    )
 }
